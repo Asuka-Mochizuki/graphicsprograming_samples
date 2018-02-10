@@ -46,6 +46,10 @@ console.log('http://localhost:' + PORT);
 function mandelbrot(){
     let table = [];
     for(let y = 0; y < FIELD_SIZE; ++y){
+        //XY座標から、-1〜1の範囲になるように変換している
+        // x / FIELD_SIZE === (0 ~ 1) - 0.5
+        //(-0.5 ~ 0.5)*2.0
+        //-1 ~ 1
         table[y] = [];
         for(let x = 0; x < FIELD_SIZE; ++x){
             let centerX = (x / FIELD_SIZE - 0.5) * 2.0;
@@ -59,6 +63,9 @@ function mandelbrot(){
             // マンデルブロ集合は計算をどの程度繰り返したのか、ということを
             // 可視化することで描き出されるので、ループ回数で割って正規化し
             // その値の大小によって出力する文字を変える
+            // 漸化式の計算は、最大でLOOP_COUNT回数になる
+            // それをLOOP_COUNTで割ると。。。
+            // 最大で取りうる数値は1.0
             let count = col / LOOP_COUNT;
             if(count < 0.1){
                 htmlSource += ' ';

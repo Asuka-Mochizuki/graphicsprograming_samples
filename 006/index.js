@@ -27,6 +27,7 @@ server.on('request', (request, response) => {
         }
         // 無事にファイルを開くことができた場合は 200 ステータスを設定し
         // ファイルの中身の HTML を返す
+        // コンテントタイプ　＝　ブラウザのようなリクエスト元が、レスポンスの中身が何であるかを判断する基準となる
         response.writeHead(200, {'Content-Type': 'text/html'});
         response.write(data);
         response.end();
