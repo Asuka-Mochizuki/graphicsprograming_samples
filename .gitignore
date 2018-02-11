@@ -1,1 +1,2 @@
 *.m4a
+find . -size +100M | sed -e 's/^\.\///' >> .gitignore
