@@ -21,7 +21,7 @@ server.on('request', (request, response) => {
     // content typeはレスポンスのタイプ
     response.writeHead(200, {'Content-Type': 'text/plain'});
     // end にフォーマットした日付文字列を渡して終了
-    response.end(formatDate(new Date()));
+    response.end(formatDate(new Date())+'aaa');
 });
 
 // 上記の server.on は、あくまでもリクエストがあったときの処理なので

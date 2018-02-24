@@ -20,4 +20,3 @@ function formatDate(date, delimiter = '/'){
     let s = date.getSeconds();   // 秒
     return y + delimiter + m + delimiter + d + ' ' + h + ':' + i + ':' + s;
 }
-
